@@ -1,12 +1,5 @@
 package com.wind_now.aws_apa;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import am.ik.aws.apa.jaxws.ItemSearchResponse;
 import com.wind_now.aws_apa.operation.Builder;
 import com.wind_now.aws_apa.operation.Director;
