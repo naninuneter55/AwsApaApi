@@ -11,5 +11,6 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class Builder {
 	static final Logger logger = LoggerFactory.getLogger(Builder.class);
-    public abstract Object invoke(List<String> keywords);
+
+	public abstract Object invoke(List<String> keywords);
 }

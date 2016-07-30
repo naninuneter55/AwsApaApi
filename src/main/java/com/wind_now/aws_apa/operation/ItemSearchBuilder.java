@@ -18,20 +18,20 @@ import am.ik.aws.apa.jaxws.ItemSearchResponse;
  */
 public class ItemSearchBuilder extends Builder {
 
-    private static final String AWS_ENDPOINT = "https://ecs.amazonaws.jp";
+	private static final String AWS_ENDPOINT = "https://ecs.amazonaws.jp";
 
-    @Override
-    public ItemSearchResponse invoke(List<String> keywords) {
+	@Override
+	public ItemSearchResponse invoke(List<String> keywords) {
 
-        String awsAccesskeyId = System.getenv("AWS_ACCESSKEY_ID");
-        String awsSecretAccesskey = System.getenv("AWS_SECRET_ACCESSKEY");
-        String awsAssociateTag = System.getenv("AWS_ASSOCIATE_TAG");
-        AwsApaRequester requester = new AwsApaRequesterImpl(AWS_ENDPOINT, awsAccesskeyId, awsSecretAccesskey, awsAssociateTag);
-        ItemSearchRequest request = new ItemSearchRequest();
-        request.setSearchIndex("Books");
-        request.setKeywords(String.join("|", keywords));
-        ItemSearchResponse response = requester.itemSearch(request);
-        return (response);
-    }
-
+		String awsAccesskeyId = System.getenv("AWS_ACCESSKEY_ID");
+		String awsSecretAccesskey = System.getenv("AWS_SECRET_ACCESSKEY");
+		String awsAssociateTag = System.getenv("AWS_ASSOCIATE_TAG");
+		AwsApaRequester requester = new AwsApaRequesterImpl(AWS_ENDPOINT, awsAccesskeyId, awsSecretAccesskey,
+			awsAssociateTag);
+		ItemSearchRequest request = new ItemSearchRequest();
+		request.setSearchIndex("Books");
+		request.setKeywords(String.join("|", keywords));
+		ItemSearchResponse response = requester.itemSearch(request);
+		return (response);
+	}
 }

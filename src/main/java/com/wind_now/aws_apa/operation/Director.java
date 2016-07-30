@@ -12,19 +12,20 @@ import java.util.List;
  * @author ono
  */
 public class Director {
-    private final Builder builder;
-    public Director(Builder builder){
-        this.builder = builder;
-    }
-    
+	private final Builder builder;
+
+	public Director(Builder builder) {
+		this.builder = builder;
+	}
+
 	@SuppressWarnings("unchecked")
-    public <T, S> Object construct(T arg, Class<S> clazz){
-        Object result = null;
-        if(arg instanceof List<?>){
-            List<String> titles = (List<String>)arg;
-            result = builder.invoke(titles);
-        }
-        return result;
-    }
-    
+	public <T, S> Object construct(T arg, Class<S> clazz) {
+		Object result = null;
+		if (arg instanceof List<?>) {
+			List<String> titles = (List<String>) arg;
+			result = builder.invoke(titles);
+		}
+		return result;
+	}
+
 }
